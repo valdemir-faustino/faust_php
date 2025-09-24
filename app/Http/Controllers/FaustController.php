@@ -12,11 +12,6 @@ class FaustController extends Controller
         $cads= Faust::all();
         return view('index', compact(  'cads'));
     }
-
-    public function create()
-    {
-        return view('create');
-    }
     
     public function show($id)
     {
@@ -24,7 +19,11 @@ class FaustController extends Controller
         return view('show', ['cad'=>$cad]);
     }
 
-
+    public function create()
+    {
+        return view('create');
+    }
+    
     public function store(Request $request)
     {
         $request->validate([
